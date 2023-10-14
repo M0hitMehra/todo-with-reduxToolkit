@@ -6,8 +6,7 @@ import { Check, Edit2Icon, TrashIcon } from "lucide-react";
 const SingleTodo = ({ todo }) => {
   const [edit, setEdit] = useState(false);
   const [input, setInput] = useState(todo.text);
-  const todos = useSelector((state) => state.todos);
-  //   console.log(todos);
+   //   console.log(todos);
   const dispatch = useDispatch();
   const ref = useRef(null);
   const inputRef = useRef(null);
@@ -20,23 +19,27 @@ const SingleTodo = ({ todo }) => {
     dispatch(updateTodo({ id: todo.id, text: input }));
   };
 
-  useEffect(() => {}, [dispatch, todos]);
+  useEffect(() => {}, [dispatch]);
+
+  const { small } = useSelector((state) => state.small);
+
 
   return (
     <div key={todo.id} className="flex justify-evenly items-center">
       {edit ? (
         <form className="w-3/4 mb-6" onSubmit={editHandler} >
-          <input
+          <textarea
             type="text"
             className="w-full border-2 border-gray-600 shadow-2xl rounded-lg p-2"
             value={input}
             ref={inputRef}
+            rows={todo.text.length/10000}
             onChange={(e) => setInput(e.target.value)}
           />
           <button ref={ref} type="submit" className="hidden"></button>
         </form>
       ) : (
-        <p className="w-3/4 border-2 border-gray-300 mb-6 rounded-lg p-2">
+        <p className="lg:w-3/4 border-2 border-gray-300 mb-6 rounded-lg p-2 overflow-y-auto max-h-24 w-full">
           {" "}
           {todo.text}
         </p>
