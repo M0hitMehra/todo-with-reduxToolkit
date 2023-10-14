@@ -1,8 +1,5 @@
-# React + Vite
+This app is build using React.js, Vite, Redux(Redux-js toolkit), Tailwind etc.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app is live at - https://todo-with-redux-toolkit-three.vercel.app/ 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#This app is a simple todo app by which i enhance skills on redux-toolkit stores data in local storage and uses redux for state management. 
